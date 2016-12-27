@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sms_db</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">YES</property>
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="show_sql">true</property>
+        <property name="hbm2ddl.auto">create</property>
+        <mapping class="com.sms.dataaccess.Medium"/>
+        <mapping class="com.sms.dataaccess.State"/>
+        <mapping class="com.sms.dataaccess.StudentClass"/>
+        <mapping class="com.sms.dataaccess.Subject"/>
+        <mapping class="com.sms.dataaccess.Student"/>
+        <!-- Specify session context -->
+        <!-- <property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property> -->
+
+    </session-factory>
+
+</hibernate-configuration>
